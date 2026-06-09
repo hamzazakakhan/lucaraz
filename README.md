@@ -1,6 +1,6 @@
 # VULSCAN-X
 
-**GLM-5.2 Autonomous Zero-Day Discovery & Exploitation System**
+**GLM-5.1 Autonomous Zero-Day Discovery & Exploitation System**
 
 A closed-loop, self-improving vulnerability research framework that autonomously discovers, validates, and exploits zero-day vulnerabilities in complex software systems.
 
@@ -203,7 +203,7 @@ Edit `config.yaml` to customize:
 ```yaml
 model:
   api_base: "http://localhost:8000/v1"  # Your LLM endpoint
-  model_name: "GLM-5.2"
+  model_name: "GLM-5.1"
   max_tokens: 8192
   temperature: 0.3
 
@@ -443,7 +443,7 @@ This project is for research and educational purposes. Use responsibly and in ac
 
 ## 🙏 Acknowledgments
 
-- GLM-5.2 language model for code analysis
+- GLM-5.1 language model for code analysis
 - AFL++, LibFuzzer, and Honggfuzz communities
 - NVD database for vulnerability deduplication
 - Docker for sandboxing infrastructure
