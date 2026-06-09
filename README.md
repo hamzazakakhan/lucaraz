@@ -193,7 +193,7 @@ pip install -r requirements.txt
 docker --version
 
 # Configure your LLM endpoint (edit config.yaml)
-# Set model.api_base to your GLM-5.2 endpoint
+# Set model.api_base to your GLM-5.1 endpoint
 ```
 
 ### Configuration
