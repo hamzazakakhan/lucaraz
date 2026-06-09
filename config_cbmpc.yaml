@@ -1,0 +1,97 @@
+# VULSCAN-X Configuration — CB-MPC Bug Bounty Target
+
+model:
+  api_base: "http://localhost:11434/v1"  # Ollama OpenAI-compatible endpoint
+  model_name: "smollm2-q4km.gguf"
+  max_tokens: 512
+  temperature: 0.3
+  timeout: 120
+
+agent:
+  max_iterations: 8
+  parallel_agents: 1          # Small model — sequential to avoid overload
+  files_per_run: 10
+  context_window: 4096
+  beam_width: 3
+  beam_depth: 3
+
+mode: "zero-day"
+
+sandbox:
+  runtime: "docker"
+  network: "none"
+  memory_limit: "4g"
+  cpu_limit: 4
+  timeout: 120
+  sanitizers: ["address", "undefined"]
+
+fuzzing:
+  engine: "afl++"
+  duration: 1800
+  seed_count: 50
+  coverage_level: "edge"
+  llm_seed_ratio: 0.4
+
+learning:
+  failure_db: "./learning/failure_db.json"
+  success_db: "./learning/success_db.json"
+  pattern_index: true
+  min_lessons_before_apply: 3
+  decay_rate: 0.95
+
+exploit:
+  primitive_extraction: true
+  chain_construction: true
+  max_chain_depth: 4
+  constraint_solver: true
+
+build:
+  cpp:
+    cxx: "clang++"
+    cxxflags: "-fsanitize=address,undefined -g -O1 -fno-omit-frame-pointer -std=c++17 -fprofile-instr-generate -fcoverage-mapping"
+
+# CB-MPC specific targets — focus on public API per bug bounty scope
+targets:
+  - name: "cb-mpc"
+    url: "https://github.com/coinbase/cb-mpc"
+    source_dir: "/home/kali/CascadeProjects/VULSCAN-X/targets/cb-mpc"
+    language: "cpp"
+    build_system: "cmake"
+    priority: 1
+    # Bug bounty scope: public API headers under include/cbmpc/api/
+    scope_paths:
+      - "include/cbmpc/api/"
+      - "src/cbmpc/api/"
+      - "src/cbmpc/crypto/"
+      - "src/cbmpc/protocol/"
+      - "src/cbmpc/zk/"
+      - "src/cbmpc/core/"
+    # High-value targets for key compromise
+    high_value_files:
+      - "src/cbmpc/crypto/base_ecc.cpp"
+      - "src/cbmpc/crypto/base_ecc_secp256k1.cpp"
+      - "src/cbmpc/crypto/base_bn.cpp"
+      - "src/cbmpc/crypto/base_bn256.cpp"
+      - "src/cbmpc/crypto/base_paillier.cpp"
+      - "src/cbmpc/crypto/secret_sharing.cpp"
+      - "src/cbmpc/crypto/base_hash.cpp"
+      - "src/cbmpc/crypto/tdh2.cpp"
+      - "src/cbmpc/protocol/"
+
+triage:
+  min_severity: "medium"
+  dedup_check: true
+  nvd_api_key: ""
+  human_review: true
+  novelty_detection: true
+
+disclosure:
+  timeline_days: 90
+  sha3_commitment: true
+  contact_method: "email"
+  # Coinbase bug bounty contact
+  disclosure_contact: "security@coinbase.com"
+
+output:
+  dir: "./output/cb-mpc"
+  format: "json"

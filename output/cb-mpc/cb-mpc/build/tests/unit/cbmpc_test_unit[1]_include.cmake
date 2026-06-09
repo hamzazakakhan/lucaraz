@@ -1,0 +1,5 @@
+if(EXISTS "/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/tests/unit/cbmpc_test_unit[1]_tests.cmake")
+  include("/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/tests/unit/cbmpc_test_unit[1]_tests.cmake")
+else()
+  add_test(cbmpc_test_unit_NOT_BUILT cbmpc_test_unit_NOT_BUILT)
+endif()

@@ -1,0 +1,548 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineSystem.cmake:205 (message)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      The system is: Linux - 6.12.38+kali-amd64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/clang++ 
+      Build flags: -fsanitize=address;-fsanitize=undefined;-g;-O1;-fno-omit-frame-pointer;-fprofile-instr-generate;-fcoverage-mapping
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is Clang, found in:
+        /home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/3.31.6/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-NAkAdD"
+      binary: "/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-NAkAdD"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-19"
+      CMAKE_CXX_FLAGS: "-fsanitize=address -fsanitize=undefined -g -O1 -fno-omit-frame-pointer -fprofile-instr-generate -fcoverage-mapping"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_EXE_LINKER_FLAGS: "-fsanitize=address -fsanitize=undefined"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-NAkAdD'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d31f1/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_d31f1.dir/build.make CMakeFiles/cmTC_d31f1.dir/build
+        gmake[1]: Entering directory '/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-NAkAdD'
+        Building CXX object CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/clang++   -fsanitize=address -fsanitize=undefined -g -O1 -fno-omit-frame-pointer -fprofile-instr-generate -fcoverage-mapping    -v -MD -MT CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
+        Debian clang version 19.1.7 (18)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-19/bin
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/14
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm-19/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=5 -debugger-tuning=gdb -fdebug-compilation-dir=/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-NAkAdD -v -fprofile-instrument=clang -fcoverage-mapping -fcoverage-compilation-dir=/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-NAkAdD -resource-dir /usr/lib/llvm-19/lib/clang/19 -dependency-file CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/x86_64-linux-gnu/c++/15 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/backward -internal-isystem /usr/lib/llvm-19/lib/clang/19/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O1 -fdeprecated-macro -ferror-limit 19 -fsanitize=address,alignment,array-bounds,bool,builtin,enum,float-cast-overflow,function,integer-divide-by-zero,nonnull-attribute,null,object-size,pointer-overflow,return,returns-nonnull-attribute,shift-base,shift-exponent,signed-integer-overflow,unreachable,vla-bound,vptr -fsanitize-recover=alignment,array-bounds,bool,builtin,enum,float-cast-overflow,function,integer-divide-by-zero,nonnull-attribute,null,object-size,pointer-overflow,returns-nonnull-attribute,shift-base,shift-exponent,signed-integer-overflow,vla-bound,vptr -fsanitize-system-ignorelist=/usr/lib/llvm-19/lib/clang/19/share/asan_ignorelist.txt -fno-sanitize-memory-param-retval -fsanitize-address-use-after-scope -fsanitize-address-globals-dead-stripping -fno-assume-sane-operator-new -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 19.1.7 based upon LLVM 19.1.7 default target x86_64-pc-linux-gnu
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15
+         /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/x86_64-linux-gnu/c++/15
+         /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/backward
+         /usr/lib/llvm-19/lib/clang/19/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Linking CXX executable cmTC_d31f1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d31f1.dir/link.txt --verbose=1
+        Debian clang version 19.1.7 (18)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-19/bin
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/14
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_d31f1 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib --whole-archive /usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_static-x86_64.a --no-whole-archive --whole-archive /usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a --no-whole-archive --dynamic-list=/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a.syms --whole-archive /usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_cxx-x86_64.a --no-whole-archive --dynamic-list=/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_cxx-x86_64.a.syms -v CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o -u__llvm_profile_runtime /usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.profile-x86_64.a -lstdc++ -lm --no-as-needed -lpthread -lrt -lm -ldl -lresolv -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Debian) 2.45
+        /usr/bin/clang++ -fsanitize=address -fsanitize=undefined -g -O1 -fno-omit-frame-pointer -fprofile-instr-generate -fcoverage-mapping  -fsanitize=address -fsanitize=undefined -v -Wl,-v CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_d31f1
+        gmake[1]: Leaving directory '/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-NAkAdD'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/x86_64-linux-gnu/c++/15]
+          add: [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/backward]
+          add: [/usr/lib/llvm-19/lib/clang/19/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15] ==> [/usr/include/c++/15]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/x86_64-linux-gnu/c++/15] ==> [/usr/include/x86_64-linux-gnu/c++/15]
+        collapse include dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/backward] ==> [/usr/include/c++/15/backward]
+        collapse include dir [/usr/lib/llvm-19/lib/clang/19/include] ==> [/usr/lib/llvm-19/lib/clang/19/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/15;/usr/include/x86_64-linux-gnu/c++/15;/usr/include/c++/15/backward;/usr/lib/llvm-19/lib/clang/19/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-NAkAdD']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_d31f1/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_d31f1.dir/build.make CMakeFiles/cmTC_d31f1.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-NAkAdD']
+        ignore line: [Building CXX object CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/clang++   -fsanitize=address -fsanitize=undefined -g -O1 -fno-omit-frame-pointer -fprofile-instr-generate -fcoverage-mapping    -v -MD -MT CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Debian clang version 19.1.7 (18)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-19/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm-19/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=5 -debugger-tuning=gdb -fdebug-compilation-dir=/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-NAkAdD -v -fprofile-instrument=clang -fcoverage-mapping -fcoverage-compilation-dir=/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-NAkAdD -resource-dir /usr/lib/llvm-19/lib/clang/19 -dependency-file CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/x86_64-linux-gnu/c++/15 -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/backward -internal-isystem /usr/lib/llvm-19/lib/clang/19/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O1 -fdeprecated-macro -ferror-limit 19 -fsanitize=address alignment array-bounds bool builtin enum float-cast-overflow function integer-divide-by-zero nonnull-attribute null object-size pointer-overflow return returns-nonnull-attribute shift-base shift-exponent signed-integer-overflow unreachable vla-bound vptr -fsanitize-recover=alignment array-bounds bool builtin enum float-cast-overflow function integer-divide-by-zero nonnull-attribute null object-size pointer-overflow returns-nonnull-attribute shift-base shift-exponent signed-integer-overflow vla-bound vptr -fsanitize-system-ignorelist=/usr/lib/llvm-19/lib/clang/19/share/asan_ignorelist.txt -fno-sanitize-memory-param-retval -fsanitize-address-use-after-scope -fsanitize-address-globals-dead-stripping -fno-assume-sane-operator-new -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake-3.31/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 19.1.7 based upon LLVM 19.1.7 default target x86_64-pc-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/x86_64-linux-gnu/c++/15]
+        ignore line: [ /usr/lib/gcc/x86_64-linux-gnu/15/../../../../include/c++/15/backward]
+        ignore line: [ /usr/lib/llvm-19/lib/clang/19/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking CXX executable cmTC_d31f1]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d31f1.dir/link.txt --verbose=1]
+        ignore line: [Debian clang version 19.1.7 (18)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-19/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_d31f1 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib --whole-archive /usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_static-x86_64.a --no-whole-archive --whole-archive /usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a --no-whole-archive --dynamic-list=/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a.syms --whole-archive /usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_cxx-x86_64.a --no-whole-archive --dynamic-list=/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_cxx-x86_64.a.syms -v CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o -u__llvm_profile_runtime /usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.profile-x86_64.a -lstdc++ -lm --no-as-needed -lpthread -lrt -lm -ldl -lresolv -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_d31f1] ==> ignore
+          arg [/lib/x86_64-linux-gnu/Scrt1.o] ==> obj [/lib/x86_64-linux-gnu/Scrt1.o]
+          arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/15] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/15]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [--whole-archive] ==> ignore
+          arg [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_static-x86_64.a] ==> lib [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_static-x86_64.a]
+          arg [--no-whole-archive] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a] ==> lib [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a]
+          arg [--no-whole-archive] ==> ignore
+          arg [--dynamic-list=/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a.syms] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_cxx-x86_64.a] ==> lib [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_cxx-x86_64.a]
+          arg [--no-whole-archive] ==> ignore
+          arg [--dynamic-list=/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_cxx-x86_64.a.syms] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_d31f1.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-u__llvm_profile_runtime] ==> ignore
+          arg [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.profile-x86_64.a] ==> lib [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.profile-x86_64.a]
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [--no-as-needed] ==> ignore
+          arg [-lpthread] ==> lib [pthread]
+          arg [-lrt] ==> lib [rt]
+          arg [-lm] ==> lib [m]
+          arg [-ldl] ==> lib [dl]
+          arg [-lresolv] ==> lib [resolv]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o]
+          arg [/lib/x86_64-linux-gnu/crtn.o] ==> obj [/lib/x86_64-linux-gnu/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld
+        remove lib [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_static-x86_64.a]
+        remove lib [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a]
+        remove lib [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_cxx-x86_64.a]
+        remove lib [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.profile-x86_64.a]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/15] ==> [/usr/lib/gcc/x86_64-linux-gnu/15]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [stdc++;m;pthread;rt;m;dl;resolv;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/lib/x86_64-linux-gnu/Scrt1.o;/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o;/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/15;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:3 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Debian) 2.45
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/_deps/googletest-src/CMakeLists.txt:6 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/clang 
+      Build flags: -fsanitize=address;-fsanitize=undefined;-g;-O1;-fno-omit-frame-pointer;-fprofile-instr-generate;-fcoverage-mapping
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is Clang, found in:
+        /home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/3.31.6/CompilerIdC/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:74 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/_deps/googletest-src/CMakeLists.txt:6 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-2zBzAF"
+      binary: "/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-2zBzAF"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-19"
+      CMAKE_C_FLAGS: "-fsanitize=address -fsanitize=undefined -g -O1 -fno-omit-frame-pointer -fprofile-instr-generate -fcoverage-mapping"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-fsanitize=address -fsanitize=undefined -Wl,-z,defs -z noexecstack -z nodelete"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-2zBzAF'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_976f9/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_976f9.dir/build.make CMakeFiles/cmTC_976f9.dir/build
+        gmake[1]: Entering directory '/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-2zBzAF'
+        Building C object CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o
+        /usr/bin/clang   -fsanitize=address -fsanitize=undefined -g -O1 -fno-omit-frame-pointer -fprofile-instr-generate -fcoverage-mapping    -v -MD -MT CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c
+        Debian clang version 19.1.7 (18)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-19/bin
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/14
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         (in-process)
+         "/usr/lib/llvm-19/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=5 -debugger-tuning=gdb -fdebug-compilation-dir=/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-2zBzAF -v -fprofile-instrument=clang -fcoverage-mapping -fcoverage-compilation-dir=/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-2zBzAF -resource-dir /usr/lib/llvm-19/lib/clang/19 -dependency-file CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/llvm-19/lib/clang/19/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O1 -ferror-limit 19 -fsanitize=address,alignment,array-bounds,bool,builtin,enum,float-cast-overflow,function,integer-divide-by-zero,nonnull-attribute,null,object-size,pointer-overflow,return,returns-nonnull-attribute,shift-base,shift-exponent,signed-integer-overflow,unreachable,vla-bound,vptr -fsanitize-recover=alignment,array-bounds,bool,builtin,enum,float-cast-overflow,function,integer-divide-by-zero,nonnull-attribute,null,object-size,pointer-overflow,returns-nonnull-attribute,shift-base,shift-exponent,signed-integer-overflow,vla-bound,vptr -fsanitize-system-ignorelist=/usr/lib/llvm-19/lib/clang/19/share/asan_ignorelist.txt -fno-sanitize-memory-param-retval -fsanitize-address-use-after-scope -fsanitize-address-globals-dead-stripping -fno-assume-sane-operator-new -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c
+        clang -cc1 version 19.1.7 based upon LLVM 19.1.7 default target x86_64-pc-linux-gnu
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include"
+        ignoring nonexistent directory "/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/llvm-19/lib/clang/19/include
+         /usr/local/include
+         /usr/include/x86_64-linux-gnu
+         /usr/include
+        End of search list.
+        Linking C executable cmTC_976f9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_976f9.dir/link.txt --verbose=1
+        Debian clang version 19.1.7 (18)
+        Target: x86_64-pc-linux-gnu
+        Thread model: posix
+        InstalledDir: /usr/lib/llvm-19/bin
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/14
+        Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15
+        Candidate multilib: .;@m64
+        Selected multilib: .;@m64
+         "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_976f9 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib --whole-archive /usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_static-x86_64.a --no-whole-archive --whole-archive /usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a --no-whole-archive --dynamic-list=/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a.syms -z defs -z noexecstack -z nodelete -v CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o -u__llvm_profile_runtime /usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.profile-x86_64.a --no-as-needed -lpthread -lrt -lm -ldl -lresolv -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /lib/x86_64-linux-gnu/crtn.o
+        GNU ld (GNU Binutils for Debian) 2.45
+        /usr/bin/clang -fsanitize=address -fsanitize=undefined -g -O1 -fno-omit-frame-pointer -fprofile-instr-generate -fcoverage-mapping  -fsanitize=address -fsanitize=undefined -Wl,-z,defs -z noexecstack -z nodelete -v -Wl,-v CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o -o cmTC_976f9
+        gmake[1]: Leaving directory '/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-2zBzAF'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:182 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/_deps/googletest-src/CMakeLists.txt:6 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/llvm-19/lib/clang/19/include]
+          add: [/usr/local/include]
+          add: [/usr/include/x86_64-linux-gnu]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/llvm-19/lib/clang/19/include] ==> [/usr/lib/llvm-19/lib/clang/19/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include/x86_64-linux-gnu] ==> [/usr/include/x86_64-linux-gnu]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/llvm-19/lib/clang/19/include;/usr/local/include;/usr/include/x86_64-linux-gnu;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:218 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/_deps/googletest-src/CMakeLists.txt:6 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-2zBzAF']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_976f9/fast]
+        ignore line: [/usr/bin/gmake  -f CMakeFiles/cmTC_976f9.dir/build.make CMakeFiles/cmTC_976f9.dir/build]
+        ignore line: [gmake[1]: Entering directory '/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-2zBzAF']
+        ignore line: [Building C object CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/clang   -fsanitize=address -fsanitize=undefined -g -O1 -fno-omit-frame-pointer -fprofile-instr-generate -fcoverage-mapping    -v -MD -MT CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
+        ignore line: [Debian clang version 19.1.7 (18)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-19/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        ignore line: [ (in-process)]
+        ignore line: [ "/usr/lib/llvm-19/bin/clang" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debug-info-kind=constructor -dwarf-version=5 -debugger-tuning=gdb -fdebug-compilation-dir=/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-2zBzAF -v -fprofile-instrument=clang -fcoverage-mapping -fcoverage-compilation-dir=/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-2zBzAF -resource-dir /usr/lib/llvm-19/lib/clang/19 -dependency-file CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/llvm-19/lib/clang/19/include -internal-isystem /usr/local/include -internal-isystem /usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include -internal-externc-isystem /usr/include/x86_64-linux-gnu -internal-externc-isystem /include -internal-externc-isystem /usr/include -O1 -ferror-limit 19 -fsanitize=address alignment array-bounds bool builtin enum float-cast-overflow function integer-divide-by-zero nonnull-attribute null object-size pointer-overflow return returns-nonnull-attribute shift-base shift-exponent signed-integer-overflow unreachable vla-bound vptr -fsanitize-recover=alignment array-bounds bool builtin enum float-cast-overflow function integer-divide-by-zero nonnull-attribute null object-size pointer-overflow returns-nonnull-attribute shift-base shift-exponent signed-integer-overflow vla-bound vptr -fsanitize-system-ignorelist=/usr/lib/llvm-19/lib/clang/19/share/asan_ignorelist.txt -fno-sanitize-memory-param-retval -fsanitize-address-use-after-scope -fsanitize-address-globals-dead-stripping -fno-assume-sane-operator-new -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake-3.31/Modules/CMakeCCompilerABI.c]
+        ignore line: [clang -cc1 version 19.1.7 based upon LLVM 19.1.7 default target x86_64-pc-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-linux-gnu/15/../../../../x86_64-linux-gnu/include"]
+        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/llvm-19/lib/clang/19/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include/x86_64-linux-gnu]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Linking C executable cmTC_976f9]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_976f9.dir/link.txt --verbose=1]
+        ignore line: [Debian clang version 19.1.7 (18)]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /usr/lib/llvm-19/bin]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/14]
+        ignore line: [Found candidate GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Selected GCC installation: /usr/lib/gcc/x86_64-linux-gnu/15]
+        ignore line: [Candidate multilib: .]
+        ignore line: [@m64]
+        ignore line: [Selected multilib: .]
+        ignore line: [@m64]
+        link line: [ "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_976f9 /lib/x86_64-linux-gnu/Scrt1.o /lib/x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/15 -L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64 -L/lib/x86_64-linux-gnu -L/lib/../lib64 -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib64 -L/lib -L/usr/lib --whole-archive /usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_static-x86_64.a --no-whole-archive --whole-archive /usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a --no-whole-archive --dynamic-list=/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a.syms -z defs -z noexecstack -z nodelete -v CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o -u__llvm_profile_runtime /usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.profile-x86_64.a --no-as-needed -lpthread -lrt -lm -ldl -lresolv -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o /lib/x86_64-linux-gnu/crtn.o]
+          arg [/usr/bin/ld] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_976f9] ==> ignore
+          arg [/lib/x86_64-linux-gnu/Scrt1.o] ==> obj [/lib/x86_64-linux-gnu/Scrt1.o]
+          arg [/lib/x86_64-linux-gnu/crti.o] ==> obj [/lib/x86_64-linux-gnu/crti.o]
+          arg [/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/15] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/15]
+          arg [-L/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64]
+          arg [-L/lib/x86_64-linux-gnu] ==> dir [/lib/x86_64-linux-gnu]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [--whole-archive] ==> ignore
+          arg [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_static-x86_64.a] ==> lib [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_static-x86_64.a]
+          arg [--no-whole-archive] ==> ignore
+          arg [--whole-archive] ==> ignore
+          arg [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a] ==> lib [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a]
+          arg [--no-whole-archive] ==> ignore
+          arg [--dynamic-list=/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a.syms] ==> ignore
+          arg [-zdefs] ==> ignore
+          arg [-znoexecstack] ==> ignore
+          arg [-znodelete] ==> ignore
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_976f9.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-u__llvm_profile_runtime] ==> ignore
+          arg [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.profile-x86_64.a] ==> lib [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.profile-x86_64.a]
+          arg [--no-as-needed] ==> ignore
+          arg [-lpthread] ==> lib [pthread]
+          arg [-lrt] ==> lib [rt]
+          arg [-lm] ==> lib [m]
+          arg [-ldl] ==> lib [dl]
+          arg [-lresolv] ==> lib [resolv]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--no-as-needed] ==> ignore
+          arg [/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o]
+          arg [/lib/x86_64-linux-gnu/crtn.o] ==> obj [/lib/x86_64-linux-gnu/crtn.o]
+        linker tool for 'C': /usr/bin/ld
+        remove lib [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan_static-x86_64.a]
+        remove lib [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.asan-x86_64.a]
+        remove lib [/usr/lib/llvm-19/lib/clang/19/lib/linux/libclang_rt.profile-x86_64.a]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/15] ==> [/usr/lib/gcc/x86_64-linux-gnu/15]
+        collapse library dir [/usr/lib/gcc/x86_64-linux-gnu/15/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/x86_64-linux-gnu] ==> [/lib/x86_64-linux-gnu]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/x86_64-linux-gnu] ==> [/usr/lib/x86_64-linux-gnu]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [pthread;rt;m;dl;resolv;gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/lib/x86_64-linux-gnu/Scrt1.o;/lib/x86_64-linux-gnu/crti.o;/usr/lib/gcc/x86_64-linux-gnu/15/crtbeginS.o;/usr/lib/gcc/x86_64-linux-gnu/15/crtendS.o;/lib/x86_64-linux-gnu/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-linux-gnu/15;/usr/lib64;/lib/x86_64-linux-gnu;/lib64;/usr/lib/x86_64-linux-gnu;/lib;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/usr/share/cmake-3.31/Modules/CMakeDetermineCompilerABI.cmake:255 (cmake_determine_linker_id)"
+      - "/usr/share/cmake-3.31/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/_deps/googletest-src/CMakeLists.txt:6 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils for Debian) 2.45
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake-3.31/Modules/Internal/CheckSourceCompiles.cmake:108 (try_compile)"
+      - "/usr/share/cmake-3.31/Modules/CheckCSourceCompiles.cmake:58 (cmake_check_source_compiles)"
+      - "/usr/share/cmake-3.31/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake-3.31/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/_deps/googletest-src/googletest/cmake/internal_utils.cmake:66 (find_package)"
+      - "/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/_deps/googletest-src/googletest/CMakeLists.txt:83 (config_compiler_and_linker)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-wOAwNn"
+      binary: "/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-wOAwNn"
+    cmakeVariables:
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps-19"
+      CMAKE_C_FLAGS: "-fsanitize=address -fsanitize=undefined -g -O1 -fno-omit-frame-pointer -fprofile-instr-generate -fcoverage-mapping"
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: "-fsanitize=address -fsanitize=undefined -Wl,-z,defs -z noexecstack -z nodelete"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-wOAwNn'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile cmTC_f7d2b/fast
+        /usr/bin/gmake  -f CMakeFiles/cmTC_f7d2b.dir/build.make CMakeFiles/cmTC_f7d2b.dir/build
+        gmake[1]: Entering directory '/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-wOAwNn'
+        Building C object CMakeFiles/cmTC_f7d2b.dir/src.c.o
+        /usr/bin/clang -DCMAKE_HAVE_LIBC_PTHREAD  -fsanitize=address -fsanitize=undefined -g -O1 -fno-omit-frame-pointer -fprofile-instr-generate -fcoverage-mapping  -MD -MT CMakeFiles/cmTC_f7d2b.dir/src.c.o -MF CMakeFiles/cmTC_f7d2b.dir/src.c.o.d -o CMakeFiles/cmTC_f7d2b.dir/src.c.o -c /home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-wOAwNn/src.c
+        Linking C executable cmTC_f7d2b
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f7d2b.dir/link.txt --verbose=1
+        /usr/bin/clang -fsanitize=address -fsanitize=undefined -g -O1 -fno-omit-frame-pointer -fprofile-instr-generate -fcoverage-mapping  -fsanitize=address -fsanitize=undefined -Wl,-z,defs -z noexecstack -z nodelete  CMakeFiles/cmTC_f7d2b.dir/src.c.o -o cmTC_f7d2b
+        gmake[1]: Leaving directory '/home/kali/CascadeProjects/VULSCAN-X/output/cb-mpc/cb-mpc/build/CMakeFiles/CMakeScratch/TryCompile-wOAwNn'
+        
+      exitCode: 0
+...

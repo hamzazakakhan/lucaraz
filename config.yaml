@@ -1,0 +1,110 @@
+# VULSCAN-X Configuration — GLM-5.2 Autonomous Zero-Day Discovery
+
+model:
+  api_base: "http://localhost:8000/v1"
+  model_name: "GLM-5.2"
+  max_tokens: 8192
+  temperature: 0.3
+  timeout: 300
+
+agent:
+  max_iterations: 8
+  parallel_agents: 8
+  files_per_run: 50
+  context_window: 32000
+  beam_width: 5          # Beam search branching factor
+  beam_depth: 3          # Max depth per branch
+
+mode: "zero-day"         # "standard" or "zero-day"
+
+sandbox:
+  runtime: "docker"
+  network: "none"
+  memory_limit: "4g"
+  cpu_limit: 4
+  timeout: 120
+  sanitizers: ["address", "undefined"]
+
+fuzzing:
+  engine: "afl++"        # "afl++", "libfuzzer", "honggfuzz"
+  duration: 3600         # 1 hour per target function
+  seed_count: 100
+  coverage_level: "edge"
+  llm_seed_ratio: 0.4    # 40% LLM-generated seeds, 60% random
+
+learning:
+  failure_db: "./learning/failure_db.json"
+  success_db: "./learning/success_db.json"
+  pattern_index: true
+  min_lessons_before_apply: 5
+  decay_rate: 0.95        # Older lessons decay in relevance
+
+exploit:
+  primitive_extraction: true
+  chain_construction: true
+  max_chain_depth: 6
+  constraint_solver: true
+
+build:
+  c:
+    cc: "clang"
+    cflags: "-fsanitize=address,undefined -g -O1 -fno-omit-frame-pointer -fprofile-instr-generate -fcoverage-mapping"
+  cpp:
+    cxx: "clang++"
+    cxxflags: "-fsanitize=address,undefined -g -O1 -fno-omit-frame-pointer -fprofile-instr-generate -fcoverage-mapping"
+  rust:
+    rustflags: "-Zsanitizer=address"
+    toolchain: "nightly"
+
+targets:
+  - name: "FFmpeg"
+    url: "https://github.com/FFmpeg/FFmpeg"
+    language: "c"
+    build_system: "make"
+    priority: 1
+  - name: "OpenSSH"
+    url: "https://github.com/openssh/openssh-portable"
+    language: "c"
+    build_system: "autotools"
+    priority: 1
+  - name: "SQLite"
+    url: "https://github.com/sqlite/sqlite"
+    language: "c"
+    build_system: "make"
+    priority: 1
+  - name: "Linux Kernel"
+    url: "https://github.com/torvalds/linux"
+    language: "c"
+    build_system: "make"
+    priority: 1
+  - name: "Chromium"
+    url: "https://chromium.googlesource.com/chromium/src"
+    language: "cpp"
+    build_system: "gn"
+    priority: 2
+  - name: "OpenSSL"
+    url: "https://github.com/openssl/openssl"
+    language: "c"
+    build_system: "make"
+    priority: 1
+  - name: "Firecracker"
+    url: "https://github.com/firecracker-microvm/firecracker"
+    language: "rust"
+    build_system: "cargo"
+    priority: 1
+
+triage:
+  min_severity: "medium"
+  dedup_check: true
+  nvd_api_key: ""
+  human_review: true
+  novelty_detection: true  # Flag findings unlike known patterns
+
+disclosure:
+  timeline_days: 90
+  sha3_commitment: true
+  contact_method: "email"
+
+output:
+  dir: "./output"
+  format: "json"
