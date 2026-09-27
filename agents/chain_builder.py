@@ -9,6 +9,7 @@ Chain patterns:
 
 import json
 from openai import OpenAI
+from utils.llm import extract_json
 
 CHAIN_PROMPT = """You are an exploit chain architect. Given a set of exploit primitives, \
 construct multi-stage exploit chains.
@@ -110,13 +111,7 @@ class ChainBuilder:
                 timeout=self.timeout,
             )
 
-            content = response.choices[0].message.content
-            if "```json" in content:
-                content = content.split("```json")[1].split("```")[0]
-            elif "```" in content:
-                content = content.split("```")[1].split("```")[0]
-
-            chains = json.loads(content.strip())
+            chains = extract_json(response.choices[0].message.content)
             if isinstance(chains, list):
                 return chains
             return []

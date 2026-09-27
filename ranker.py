@@ -245,7 +245,7 @@ class GraphRanker:
         branches += len(re.findall(r'\bwhile\b', content))
         branches += len(re.findall(r'\bcase\b', content))
         branches += len(re.findall(r'\b&&\b', content))
-        branches += len(re.findall(r'\|\|\b', content))
+        branches += len(re.findall(r'\|\|', content))
         return branches + 1
 
     def _count_memory_ops(self, content: str, language: str) -> int:

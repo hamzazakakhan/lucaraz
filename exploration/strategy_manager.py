@@ -2,6 +2,7 @@
 
 import json
 from openai import OpenAI
+from utils.llm import extract_json
 
 FAILURE_ANALYSIS_PROMPT = """Analyze why this PoC attempt failed and derive a lesson.
 
@@ -98,13 +99,7 @@ class StrategyManager:
                 timeout=self.timeout,
             )
 
-            content = response.choices[0].message.content
-            if "```json" in content:
-                content = content.split("```json")[1].split("```")[0]
-            elif "```" in content:
-                content = content.split("```")[1].split("```")[0]
-
-            return json.loads(content.strip())
+            return extract_json(response.choices[0].message.content)
 
         except Exception:
             return {

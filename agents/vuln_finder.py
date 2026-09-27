@@ -4,6 +4,7 @@ import json
 import os
 from pathlib import Path
 from openai import OpenAI
+from utils.llm import extract_json
 
 SYSTEM_PROMPT = """You are an elite security researcher with 20 years of experience in \
 vulnerability discovery. You analyze source code methodically, tracing data flow from inputs \
@@ -94,13 +95,7 @@ class VulnerabilityFinder:
                 timeout=self.timeout,
             )
 
-            content = response.choices[0].message.content
-            if "```json" in content:
-                content = content.split("```json")[1].split("```")[0]
-            elif "```" in content:
-                content = content.split("```")[1].split("```")[0]
-
-            vulns = json.loads(content.strip())
+            vulns = extract_json(response.choices[0].message.content)
             if isinstance(vulns, list):
                 for v in vulns:
                     v["file"] = file_path

@@ -2,6 +2,7 @@
 
 import json
 from openai import OpenAI
+from utils.llm import extract_json
 
 POC_PROMPT = """Write a minimal proof-of-concept exploit for the following vulnerability.
 
@@ -93,13 +94,7 @@ class PoCWriter:
                 timeout=self.timeout,
             )
 
-            content = response.choices[0].message.content
-            if "```json" in content:
-                content = content.split("```json")[1].split("```")[0]
-            elif "```" in content:
-                content = content.split("```")[1].split("```")[0]
-
-            poc = json.loads(content.strip())
+            poc = extract_json(response.choices[0].message.content)
             poc["iteration"] = iteration + 1
             return poc
 

@@ -37,7 +37,9 @@ class PatternIndex:
         """Persist databases to disk."""
         for path, data in [(self.failure_db_path, self.failures),
                            (self.success_db_path, self.successes)]:
-            os.makedirs(os.path.dirname(path), exist_ok=True)
+            parent = os.path.dirname(path)
+            if parent:
+                os.makedirs(parent, exist_ok=True)
             with open(path, "w") as f:
                 json.dump(data, f, indent=2)
 

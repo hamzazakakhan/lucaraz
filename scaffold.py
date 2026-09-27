@@ -190,14 +190,14 @@ class VulscanX:
         self.state_tracker.save(workspace / "exploit_context.json")
         self.pattern_index.save()
 
+        # SHA-3 commitments (must be added before writing to include them in the report)
+        for finding in triaged:
+            finding["commitment"] = self.committer.commit(finding)
+
         # Save results
         report_path = workspace / f"report_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
         with open(report_path, "w") as f:
             json.dump(triaged, f, indent=2, default=str)
-
-        # SHA-3 commitments
-        for finding in triaged:
-            finding["commitment"] = self.committer.commit(finding)
 
         print(f"\n  RESULTS: {len(triaged)} validated | {len(primitives)} primitives | {len(chains)} chains")
         print(f"  Report: {report_path}")
@@ -227,7 +227,7 @@ class VulscanX:
             # Beam search over PoC strategies
             beam_results = self.beam.search(
                 initial_state=finding,
-                expand_fn=lambda state, depth: self._expand_poc(state, language, depth),
+                expand_fn=lambda state, depth, _lang=language, _sd=source_dir: self._expand_poc(state, _lang, _sd, depth),
                 score_fn=self._score_attempt,
             )
 
@@ -250,14 +250,14 @@ class VulscanX:
 
         return validated
 
-    def _expand_poc(self, state: dict, language: str, depth: int) -> list:
+    def _expand_poc(self, state: dict, language: str, source_dir: Path, depth: int) -> list:
         """Expand a PoC attempt into variants (beam search children)."""
         variants = []
         strategies = self.strategy_mgr.get_strategies(state.get("bug_type", "unknown"))
 
         for strategy in strategies:
             poc = self.poc_writer.write_poc(state, language, depth, strategy=strategy)
-            validation = self.validator.validate(poc, state, Path(state.get("source_dir", ".")), language)
+            validation = self.validator.validate(poc, state, source_dir, language)
 
             variant = {
                 "finding": state,
@@ -337,8 +337,12 @@ class VulscanX:
 
     def _clone_repo(self, url: str, dest: Path):
         import subprocess
-        subprocess.run(["git", "clone", "--depth", "1", url, str(dest)],
-                       capture_output=True, text=True, timeout=600)
+        result = subprocess.run(
+            ["git", "clone", "--depth", "1", url, str(dest)],
+            capture_output=True, text=True, timeout=600,
+        )
+        if result.returncode != 0:
+            raise RuntimeError(f"git clone failed for {url}: {result.stderr.strip()}")
 
 
 def main():
