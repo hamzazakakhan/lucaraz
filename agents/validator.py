@@ -107,7 +107,7 @@ class PoCValidator:
     def _check_crash(self, result: dict) -> bool:
         exit_code = result.get("exit_code", 0)
         if exit_code > 128:
-            return (exit_code - 128) in [6, 7, 8, 11]  # SIGABRT, SIGBUS, SIGFPE, SIGSEGV
+            return (exit_code - 128) in [4, 6, 7, 8, 11]  # SIGILL, SIGABRT, SIGBUS, SIGFPE, SIGSEGV
         return exit_code < 0
 
     def _check_expected(self, result: dict, expected: str) -> bool:

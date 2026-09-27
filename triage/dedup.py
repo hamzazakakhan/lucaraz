@@ -23,8 +23,12 @@ class DedupChecker:
                     cves = json.load(f)
             except (json.JSONDecodeError, OSError):
                 cves = self._query_nvd(project, component)
+                with open(cache_file, "w") as f:
+                    json.dump(cves, f)
         else:
             cves = self._query_nvd(project, component)
+            with open(cache_file, "w") as f:
+                json.dump(cves, f)
         bug_type = finding.get("bug_type", "").lower()
         type_kw = {"heap-buffer-overflow": ["buffer overflow", "heap overflow"],
                     "use-after-free": ["use-after-free", "use after free"],
